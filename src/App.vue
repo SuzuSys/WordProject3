@@ -1,9 +1,6 @@
-<script setup>
-import '@aws-amplify/ui-vue/styles.css';
-</script>
 <template>
   <authenticator>
-    <template v-slot="{ user, signOut }">
+    <template v-slot="{ signOut }"> <!-- user.username -->
       <v-app>
         <v-app-bar app>
           <v-app-bar-title>
@@ -11,6 +8,7 @@ import '@aws-amplify/ui-vue/styles.css';
           </v-app-bar-title>
           <v-btn 
             class="ml-auto"
+            @click="goAccount"
           >
             Account
           </v-btn>
@@ -21,10 +19,20 @@ import '@aws-amplify/ui-vue/styles.css';
           </v-btn>
         </v-app-bar>
         <v-main>
-          {{ user }}
+          <router-view />
         </v-main>
       </v-app>
-      <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
 </template>
+<script>
+import '@aws-amplify/ui-vue/styles.css';
+export default {
+  name: 'App',
+  methods: {
+    goAccount() {
+      this.$router.push({ path: '/account' });
+    }
+  },
+};
+</script>
