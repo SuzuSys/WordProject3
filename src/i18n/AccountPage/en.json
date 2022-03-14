@@ -1,0 +1,14 @@
+{
+  "error": {
+    "NotGetUserInfo": "Could not get user information.",
+    "UpdateEmail": "An error occurred while updating the email.",
+    "EmailVerificationCodeMismatch": "The code does not match."
+  },
+  "info": {
+    "CannotChangeUsername": "'Username' cannot be changed. Change the 'Name' instead.",
+    "SendEmailVerificationCode": "We have sent your verification code to your email. Please open the email from verificationemail.com and input the code in the following form."
+  },
+  "success": {
+    "UpdateEmail": "Updated Email."
+  }
+}

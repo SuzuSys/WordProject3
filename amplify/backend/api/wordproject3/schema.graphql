@@ -9,3 +9,7 @@ type TestSearchSchema @model @searchable @auth(rules: [
   id: ID!
   name: String!
 }
+
+type Query {
+  access_email_verification: Boolean @function(name: "WordprojectEmailVerification-${env}")
+}

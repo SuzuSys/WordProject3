@@ -1,0 +1,14 @@
+{
+  "error": {
+    "NotGetUserInfo": "ユーザー情報を取得できませんでした。",
+    "UpdateEmail": "Emailの更新中にエラーが発生しました。",
+    "EmailVerificationCodeMismatch": "入力された検証コードが一致しませんでした。"
+  },
+  "info": {
+    "CannotChangeUsername": "Usernameは変更できません。代わりにNameを変更してください。",
+    "SendEmailVerificationCode": "検証コードをあなたのEmailに送信しました。verificationemail.com からのメールに記載されているコードを次のフォームに入力してください。"
+  },
+  "success": {
+    "UpdateEmail": "Emailを更新しました。"
+  }
+}

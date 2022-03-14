@@ -1,6 +1,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const access_email_verification = /* GraphQL */ `
+  query Access_email_verification {
+    access_email_verification
+  }
+`;
 export const searchTestSearchSchemas = /* GraphQL */ `
   query SearchTestSearchSchemas(
     $filter: SearchableTestSearchSchemaFilterInput

@@ -45,5 +45,21 @@
         ]
       }
     }
+  },
+  "function": {
+    "WordprojectEmailVerification": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "wordproject3f2910198",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
+    }
   }
 }

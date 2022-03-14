@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "wordproject3f2910198": {}
+      },
+      "function": {
+        "WordprojectEmailVerification": {
+          "deploymentBucketName": "amplify-wordproject3-dev-201440-deployment",
+          "s3Key": "amplify-builds/WordprojectEmailVerification-646e697972324e4b787a-build.zip"
+        }
       }
     }
   }
