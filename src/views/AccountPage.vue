@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Cannot get user info -->
     <v-alert
       density="compact"
       type="error"
@@ -11,29 +12,7 @@
       v-if="create_edit_account"
       :initial_username="initial.username"
       :initial_email="initial.email" 
-    />
-    <v-card
-      elevation="2"
-      class="mx-auto"
-      max-width="374"
-    >
-      <v-card-title>Edit Profile</v-card-title>
-      <!--
-      <v-card-actions>
-        <v-form>
-          <v-text-field
-            label="Name"
-            v-model="name"
-          ></v-text-field>
-          <v-btn
-            @click="editName"
-          >
-            Edit
-          </v-btn>
-        </v-form>
-      </v-card-actions>
-      -->
-    </v-card>
+    ></edit-account>
   </div>
 </template>
 

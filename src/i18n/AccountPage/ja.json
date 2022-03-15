@@ -2,13 +2,23 @@
   "error": {
     "NotGetUserInfo": "ユーザー情報を取得できませんでした。",
     "UpdateEmail": "Emailの更新中にエラーが発生しました。",
-    "EmailVerificationCodeMismatch": "入力された検証コードが一致しませんでした。"
+    "EmailVerificationCodeMismatch": "入力された検証コードが一致しませんでした。",
+    "ResentEmailVerificationCode": "検証コードのリクエスト中にエラーが発生しました。",
+    "NotGetEmailVerified": "Emailが検証済みかどうかのデータが取得できませんでした。",
+    "UpdatePassword": "Passwordの更新中にエラーが発生しました。",
+    "PasswordIncorrect": "Old password が間違っています。"
   },
   "info": {
-    "CannotChangeUsername": "Usernameは変更できません。代わりにNameを変更してください。",
-    "SendEmailVerificationCode": "検証コードをあなたのEmailに送信しました。verificationemail.com からのメールに記載されているコードを次のフォームに入力してください。"
+    "CannotChangeUsername": "Usernameは変更できません。",
+    "SentEmailVerificationCode": "検証コードをあなたのEmailに送信しました。verificationemail.com からのメールに記載されているコードを次のフォームに入力してください。",
+    "EmailNotVerifiedYet": "Emailがまだ検証されていません。verificationemail.com からのメールに記載されているコードを次のフォームに入力してください。"
   },
   "success": {
-    "UpdateEmail": "Emailを更新しました。"
+    "UpdateEmail": "Emailを更新しました。",
+    "ResentEmailVerificationCode": "検証コードを再送信しました。",
+    "UpdatePassword": "Passwordを更新しました。"
+  },
+  "method": {
+    "RequestResendVerificationCode": "検証コードを再取得する"
   }
 }

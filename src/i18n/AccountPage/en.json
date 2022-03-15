@@ -2,13 +2,23 @@
   "error": {
     "NotGetUserInfo": "Could not get user information.",
     "UpdateEmail": "An error occurred while updating the email.",
-    "EmailVerificationCodeMismatch": "The code does not match."
+    "EmailVerificationCodeMismatch": "The code does not match.",
+    "ResentEmailVerificationCode": "An error occurred while requesting resend the code.",
+    "NotGetEmailVerified": "Could not get data on whether your email has been validated.",
+    "UpdatePassword": "An error occurred while updating the password.",
+    "PasswordIncorrect": "Old password is incorrect."
   },
   "info": {
-    "CannotChangeUsername": "'Username' cannot be changed. Change the 'Name' instead.",
-    "SendEmailVerificationCode": "We have sent your verification code to your email. Please open the email from verificationemail.com and input the code in the following form."
+    "CannotChangeUsername": "The username cannot be changed.",
+    "SentEmailVerificationCode": "We have sent your verification code to your email. Please open the email from verificationemail.com and input the code in the following form.",
+    "EmailNotVerifiedYet": "Your email has not been verified yet. Please open the email from verificationemail.com and input the code in the following form."
   },
   "success": {
-    "UpdateEmail": "Updated Email."
+    "UpdateEmail": "Updated the email.",
+    "ResentEmailVerificationCode": "We have sent the code again.",
+    "UpdatePassword": "Updated the password."
+  },
+  "method": {
+    "RequestResendVerificationCode": "Request resend the code"
   }
 }
