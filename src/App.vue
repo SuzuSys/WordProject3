@@ -19,25 +19,22 @@
         </v-app-bar>
         <v-navigation-drawer
           v-model="drawer"
-          absolute
+          bottom
           temporary
         >
-          <v-list
+          <v-list           
             nav
-            dense
+            density="compact"
           >
-            <v-list-item-group
-              v-model="group"
-              active-class="text--accent-4"
-            >
-              <v-list-item>
-                <v-list-item-title>Home</v-list-item-title>
-              </v-list-item>
-            </v-list-item-group>
+            <v-list-item
+              :prepend-icon="mdiViewDashboard"
+              title="Dashboard"
+              @click="goDashboard"
+            ></v-list-item>
           </v-list>
         </v-navigation-drawer>
         <v-main>
-          <router-view />
+          <router-view></router-view>
         </v-main>
       </v-app>
     </template>
@@ -45,18 +42,21 @@
 </template>
 <script>
 import '@aws-amplify/ui-vue/styles.css';
-import { mdiAccount } from '@mdi/js';
+import { mdiAccount, mdiViewDashboard } from '@mdi/js';
 export default {
   name: 'App',
   data: () => ({
     mdiAccount,
+    mdiViewDashboard,
     drawer: false,
-    group: null,
   }),
   methods: {
+    goDashboard() {
+      this.$router.push({ path: './dashboard' });
+    },
     goAccount() {
       this.$router.push({ path: '/account' });
-    }
+    },
   },
 };
 </script>
