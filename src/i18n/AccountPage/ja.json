@@ -4,7 +4,6 @@
     "UpdateEmail": "Emailの更新中にエラーが発生しました。",
     "EmailVerificationCodeMismatch": "入力された検証コードが一致しませんでした。",
     "ResentEmailVerificationCode": "検証コードのリクエスト中にエラーが発生しました。",
-    "NotGetEmailVerified": "Emailが検証済みかどうかのデータが取得できませんでした。",
     "UpdatePassword": "Passwordの更新中にエラーが発生しました。",
     "PasswordIncorrect": "Old password が間違っています。"
   },

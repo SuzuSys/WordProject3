@@ -67,16 +67,6 @@
         >
           {{ $t("AccountPage.info.EmailNotVerifiedYet") }}
         </v-alert>
-        <!-- Could not get data on whether your email has been validated -->
-        <v-alert 
-          type="error"
-          v-show="alert_error_get_email_verified"
-          density="compact"
-          class="my-2"
-          variant="outlined"
-        >
-          {{ $t("AccountPage.error.NotGetEmailVerified") }}
-        </v-alert>
         <!-- email varification code -->
         <v-form
           v-show="form_email_verification_code"
@@ -260,8 +250,7 @@
 </template>
 
 <script>
-import { API, Auth } from 'aws-amplify';
-import { access_email_verification } from '@/graphql/queries';
+import { Auth } from 'aws-amplify';
 import { mdiEye, mdiEyeOff } from '@mdi/js';
 
 export default {
@@ -269,6 +258,7 @@ export default {
   props: {
     initial_username: String,
     initial_email: String,
+    email_not_verified_yet: Boolean,
   },
   data() {
     return {
@@ -296,29 +286,14 @@ export default {
       alert_code_mismatch: false,
       alert_resent_code: false,
       alert_error_resent_code: false,
-      alert_email_not_verified_yet: false,
-      alert_error_get_email_verified: false,
+      alert_email_not_verified_yet: this.email_not_verified_yet,
       alert_password_success: false,
       alert_password_error: false,
       alert_password_incorrect: false,
 
       form_email_verification_code: false,
       form_change_password: false,
-    }
-  },
-  async created() {
-    try {
-      const response = await API.graphql({
-        query: access_email_verification,
-      });
-      if (response.data.access_email_verification === false) {
-        this.alert_email_not_verified_yet = true;
-        this.form_email_verification_code = true;
-      }
-    } catch (e) {
-      console.error(e);
-      this.alert_error_get_email_verified = true;
-    }
+    };
   },
   methods: {
     async updateEmail() {

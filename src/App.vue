@@ -9,8 +9,34 @@
           <v-app-bar-title>
             Word Project
           </v-app-bar-title>
-          <v-btn 
-            class="ml-auto"
+          <v-spacer></v-spacer>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <v-btn
+                dark
+                icon
+                v-bind="props"
+              >
+                <v-icon :icon="mdiWeb"></v-icon>
+              </v-btn>
+            </template>
+            <v-card>
+              <v-list>
+                <v-list-subheader>Translaion</v-list-subheader>
+                <v-list-item
+                  v-for="(item, i) in languages"
+                  :key="i"
+                  :value="item"
+                  active-color="primary"
+                  variant="contained"
+                  @click="$i18n.locale = item.value"
+                >
+                  <v-list-item-title v-text="item.label"></v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-menu>
+          <v-btn
             @click="goAccount"
             icon
           >
@@ -42,13 +68,21 @@
 </template>
 <script>
 import '@aws-amplify/ui-vue/styles.css';
-import { mdiAccount, mdiViewDashboard } from '@mdi/js';
+import { mdiAccount, mdiViewDashboard, mdiWeb } from '@mdi/js';
 export default {
   name: 'App',
   data: () => ({
     mdiAccount,
     mdiViewDashboard,
+    mdiWeb,
+
+    translation: 'ja',
     drawer: false,
+    selectedItem: 0,
+    languages: [
+      {value: 'ja', label: '日本語'},
+      {value: 'en', label: 'English'},
+    ],
   }),
   methods: {
     goDashboard() {

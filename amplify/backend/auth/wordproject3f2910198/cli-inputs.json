@@ -31,7 +31,8 @@
     ],
     "userpoolClientReadAttributes": [
       "email",
-      "name"
+      "name",
+      "email_verified"
     ],
     "userpoolClientLambdaRole": "wordprf2910198_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
