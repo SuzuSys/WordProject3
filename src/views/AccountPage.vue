@@ -10,13 +10,13 @@
     </v-alert>
     <edit-account
       v-if="create_edit_account"
-      :initial_username="initial.username"
       :initial_email="initial.email"
       :email_not_verified_yet="initial.email_not_verified_yet"
     ></edit-account>
     <edit-profile
       v-if="create_edit_profile"
       :initial_name="initial.name"
+      :initial_language="initial.language"
     ></edit-profile>
     <!-- Sign Out -->
     <v-card
@@ -59,10 +59,10 @@ export default {
   data() {
     return {
       initial: {
-        username: '',
         email: '',
         email_not_verified_yet: false,
         name: '',
+        language: '',
       },
       create_edit_account: false,
       create_edit_profile: false,
@@ -76,10 +76,10 @@ export default {
         let user = await Auth.currentAuthenticatedUser();
         console.log(user);
         this.initial = {
-          username: user.username,
           email: user.attributes.email,
           email_not_verified_yet: !user.attributes.email_verified,
           name: user.attributes.name || '',
+          language: user.attributes['custom:language'] || '',
         };
         this.create_edit_account = true;
         this.create_edit_profile = true;

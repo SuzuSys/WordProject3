@@ -7,22 +7,6 @@
     <v-card-title>Edit Account</v-card-title>
     <v-card-actions>
       <v-container class="pa-1">
-        <!-- username -->
-        <v-row>
-          <v-col cols="9">
-            <v-text-field
-              v-model="username"
-              label="Username"
-              variant="outlined"
-              readonly
-              :hint="this.$t('AccountPage.info.CannotChangeUsername')"
-              density="compact"
-              hide-details="auto"
-            ></v-text-field>
-          </v-col>
-          <v-col cols="3"></v-col>
-        </v-row>
-        <v-divider class="my-3"></v-divider>
         <!-- email -->
         <v-form>
           <v-row>
@@ -173,7 +157,7 @@
             <v-col cols="12">
               <v-text-field
                 v-model="password_old"
-                :append-icon="show_password_old ? mdiEye : mdiEyeOff"
+                :append-icon="show_password_old ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="show_password_old ? 'text' : 'password'"
                 density="compact"
                 variant="outlined"
@@ -189,7 +173,7 @@
             <v-col cols="12">
               <v-text-field
                 v-model="password_new"
-                :append-icon="show_password_new ? mdiEye : mdiEyeOff"
+                :append-icon="show_password_new ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="show_password_new ? 'text' : 'password'"
                 density="compact"
                 variant="outlined"
@@ -251,21 +235,15 @@
 
 <script>
 import { Auth } from 'aws-amplify';
-import { mdiEye, mdiEyeOff } from '@mdi/js';
 
 export default {
   name: 'EditAccount',
   props: {
-    initial_username: String,
     initial_email: String,
     email_not_verified_yet: Boolean,
   },
   data() {
     return {
-      mdiEye,
-      mdiEyeOff,
-
-      username: this.initial_username,
       email: this.initial_email,
       email_original: this.initial_email,
       email_verification_code: '',

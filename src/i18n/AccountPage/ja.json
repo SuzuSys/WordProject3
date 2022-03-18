@@ -5,7 +5,9 @@
     "EmailVerificationCodeMismatch": "入力された検証コードが一致しませんでした。",
     "ResentEmailVerificationCode": "検証コードのリクエスト中にエラーが発生しました。",
     "UpdatePassword": "Passwordの更新中にエラーが発生しました。",
-    "PasswordIncorrect": "Old password が間違っています。"
+    "PasswordIncorrect": "Old password が間違っています。",
+    "UpdateName": "Nameの更新中にエラーが発生しました。",
+    "UpdateLanguage": "Languageの更新中にエラーが発生しました。"
   },
   "info": {
     "CannotChangeUsername": "Usernameは変更できません。",
@@ -15,7 +17,9 @@
   "success": {
     "UpdateEmail": "Emailを更新しました。",
     "ResentEmailVerificationCode": "検証コードを再送信しました。",
-    "UpdatePassword": "Passwordを更新しました。"
+    "UpdatePassword": "Passwordを更新しました。",
+    "UpdateName": "Nameを更新しました。",
+    "UpdateLanguage": "Languageを更新しました。"
   },
   "method": {
     "RequestResendVerificationCode": "検証コードを再取得する"

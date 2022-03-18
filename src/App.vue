@@ -10,14 +10,17 @@
             Word Project
           </v-app-bar-title>
           <v-spacer></v-spacer>
-          <v-menu>
+          <v-menu
+            v-model="menu_languages"
+            :close-on-content-click="false"
+          >
             <template v-slot:activator="{ props }">
               <v-btn
                 dark
                 icon
                 v-bind="props"
               >
-                <v-icon :icon="mdiWeb"></v-icon>
+                <v-icon icon="mdi-web"></v-icon>
               </v-btn>
             </template>
             <v-card>
@@ -27,9 +30,9 @@
                   v-for="(item, i) in languages"
                   :key="i"
                   :value="item"
-                  active-color="primary"
+                  :color="$i18n.locale === item.value ? 'primary' : 'default'"
                   variant="contained"
-                  @click="$i18n.locale = item.value"
+                  @click="changeLanguage(item.value)"
                 >
                   <v-list-item-title v-text="item.label"></v-list-item-title>
                 </v-list-item>
@@ -40,7 +43,7 @@
             @click="goAccount"
             icon
           >
-            <v-icon :icon="mdiAccount" />
+            <v-icon icon="mdi-account" />
           </v-btn>
         </v-app-bar>
         <v-navigation-drawer
@@ -53,7 +56,7 @@
             density="compact"
           >
             <v-list-item
-              :prepend-icon="mdiViewDashboard"
+              prepend-icon="mdi-view-dashboard"
               title="Dashboard"
               @click="goDashboard"
             ></v-list-item>
@@ -68,21 +71,16 @@
 </template>
 <script>
 import '@aws-amplify/ui-vue/styles.css';
-import { mdiAccount, mdiViewDashboard, mdiWeb } from '@mdi/js';
 export default {
   name: 'App',
   data: () => ({
-    mdiAccount,
-    mdiViewDashboard,
-    mdiWeb,
-
     translation: 'ja',
     drawer: false,
-    selectedItem: 0,
     languages: [
       {value: 'ja', label: '日本語'},
       {value: 'en', label: 'English'},
     ],
+    menu_languages: false,
   }),
   methods: {
     goDashboard() {
@@ -90,6 +88,10 @@ export default {
     },
     goAccount() {
       this.$router.push({ path: '/account' });
+    },
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      this.menu_languages = false;
     },
   },
 };

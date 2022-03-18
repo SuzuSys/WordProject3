@@ -8,7 +8,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authwordproject3f2910198"
+              "userPoolId": "authwordproject3420c3ca3420c3ca3"
             }
           },
           "additionalAuthenticationProviders": [
@@ -21,16 +21,19 @@
     }
   },
   "auth": {
-    "wordproject3f2910198": {
+    "wordproject3420c3ca3420c3ca3": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
-        "signupAttributes": [
+        "usernameAttributes": [
           "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL",
+          "NAME"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,

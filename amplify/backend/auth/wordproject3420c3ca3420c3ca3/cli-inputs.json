@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "wordproject3f2910198_identitypool_f2910198",
+    "identityPoolName": "wordproject3420c3ca3_identitypool_420c3ca3",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "wordprf2910198",
-    "userPoolName": "wordproject3f2910198_userpool_f2910198",
+    "resourceNameTruncated": "wordpr420c3ca3",
+    "userPoolName": "wordproject3420c3ca3_userpool_420c3ca3",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -20,53 +20,38 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email"
+      "email",
+      "name"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-      "name",
-      "email"
+      "email",
+      "name"
     ],
     "userpoolClientReadAttributes": [
       "email",
       "name",
       "email_verified"
     ],
-    "userpoolClientLambdaRole": "wordprf2910198_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "wordpr420c3ca3_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "sharedId": "f2910198",
-    "resourceName": "wordproject3f2910198",
+    "sharedId": "420c3ca3",
+    "resourceName": "wordproject3420c3ca3420c3ca3",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "manual",
-    "userPoolGroupList": [],
-    "serviceName": "Cognito",
-    "usernameCaseSensitive": false,
-    "useEnabledMfas": true,
-    "authRoleArn": {
-      "Fn::GetAtt": [
-        "AuthRole",
-        "Arn"
-      ]
-    },
-    "unauthRoleArn": {
-      "Fn::GetAtt": [
-        "UnauthRole",
-        "Arn"
-      ]
-    },
-    "breakCircularDependency": true,
-    "dependsOn": [],
+    "thirdPartyAuth": false,
+    "usernameAttributes": [
+      "email"
+    ],
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": {},
     "hostedUI": false,
-    "parentStack": {
-      "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "authProviders": [],
-    "thirdPartyAuth": false
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
   }
 }

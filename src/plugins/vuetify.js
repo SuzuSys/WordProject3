@@ -4,7 +4,7 @@ import 'vuetify/styles'
 
 // Vuetify
 import { createVuetify } from 'vuetify';
-import { aliases, mdi } from 'vuetify/lib/iconsets/mdi-svg';
+import { aliases, mdi } from 'vuetify/lib/iconsets/mdi';
 
 export default createVuetify({
   icons: {
